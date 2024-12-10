@@ -1,0 +1,584 @@
+.terms-container {
+    background-color: #f9f9f9;
+    border-radius: 2px;
+    border: 2px solid rgb(231, 230, 230);
+    box-shadow: -2px 5px 5px rgba(0, 0, 0, 0.1), 
+    2px 5px 5px rgba(0, 0, 0, 0.1),   
+    3px 3px 5px rgba(0, 0, 0, 0.1);    
+     /* margin-left:-10% ;
+    margin-right:-10% ; */
+    /* width: 80vw; */
+}
+.second_div{
+    background-color: white;
+}
+.content-scrollable {
+    overflow-y: scroll;
+    padding: 1%;
+    background-color: #fff;
+    height: 67vh;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+.btn{
+    width: 25%;
+    height: 40px;
+}
+.heading{
+    font-size: 1.5rem;
+    color: #269c2f;
+}
+.text-uppercase{
+    font-weight: 500;
+    font-family: Montserrat;
+    color:#212529;
+}
+
+.greenheadings{
+    color: #269c2f;
+    font-family: Montserrat;
+    font-weight: 500;
+
+}
+.blackheading{
+    font-family: Montserrat;
+    color:#212529;
+    font-size: medium;
+    /* background-color: red; */
+}
+.subheadings{
+  color: black;
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+
+
+.main-list {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list> li::before {
+    content: "1." counter(section) ". "; 
+}
+
+
+.main-list-2 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-2 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-2 > li::before {
+    content: "2." counter(section) ". "; 
+}
+
+
+.main-list-3 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-3 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-3 > li::before {
+    content: "3." counter(section) ". "; 
+}
+
+
+.main-list-4 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-4 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-4 > li::before {
+    content: "4." counter(section) ". "; 
+}
+
+
+.main-list-5 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-5 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-5 > li::before {
+    content: "5." counter(section) ". "; 
+}
+
+
+.main-list-6 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-6 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-6 > li::before {
+    content: "6." counter(section) ". "; 
+}
+
+
+.main-list-7 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-7 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-7 > li::before {
+    content: "7." counter(section) ". "; 
+}
+
+
+.main-list-8 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-8 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-8 > li::before {
+    content: "8." counter(section) ". "; 
+}
+
+
+
+.main-list-8 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-8 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-8 > li::before {
+    content: "8." counter(section) ". "; 
+}
+
+
+
+.main-list-9 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-9 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-9 > li::before {
+    content: "9." counter(section) ". "; 
+}
+
+
+.main-list-10 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-10 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-10 > li::before {
+    content: "10." counter(section) ". "; 
+}
+
+
+.main-list-11 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-11 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-11 > li::before {
+    content: "11." counter(section) ". "; 
+}
+.main-list-12 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-12 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-12 > li::before {
+    content: "12." counter(section) ". "; 
+}
+.main-list-13 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-13 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-13 > li::before {
+    content: "13." counter(section) ". "; 
+}
+.main-list-14 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-14 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-14 > li::before {
+    content: "14." counter(section) ". "; 
+}
+.main-list-15 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-15 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-15 > li::before {
+    content: "15." counter(section) ". "; 
+}
+.main-list-16 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-16 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-16 > li::before {
+    content: "16." counter(section) ". "; 
+}
+.main-list-17 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-17 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-17 > li::before {
+    content: "17." counter(section) ". "; 
+}
+
+
+.main-list-18 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-18 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-18 > li::before {
+    content: "18." counter(section) ". "; 
+}
+.main-list-19 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-19 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+.main-list-19 > li::before {
+    content: "19." counter(section) ". "; 
+}
+
+.main-list-20 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-20 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-20 > li::before {
+    content: "20." counter(section) ". "; 
+}
+
+
+
+.main-list-21 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-21 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-21 > li::before {
+    content: "21." counter(section) ". "; 
+}
+.main-list-22 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-22 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-22 > li::before {
+    content: "22." counter(section) ". "; 
+}
+.main-list-23 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-23 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-23 > li::before {
+    content: "23." counter(section) ". "; 
+}
+.main-list-24 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-24 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-24 > li::before {
+    content: "24." counter(section) ". "; 
+}
+.main-list-25 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-25 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-25 > li::before {
+    content: "25." counter(section) ". "; 
+}
+.main-list-26 {
+    counter-reset: section; 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.main-list-26 > li {
+    counter-increment: section;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.main-list-26 > li::before {
+    content: "26." counter(section) ". "; 
+}
+
+.btn2{
+    background-color: #269c2f;
+}
+
+@media screen and (max-width: 990px) {
+    .terms-container {
+        margin-left: 0;
+        margin-right: 0;
+        border: none;
+    }
+    .btn2{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .btn1{
+        width: 100%;
+    }
+}
+
+/* @media (min-width:700px)  and (max-width: 990px) {
+   
+    .btn1{
+        width: 50%;
+
+    }
+
+    .btn2{
+        margin-top: 10px;
+        width: 50%;
+        margin-left: 0;
+    }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container{
+    width:85%;
+} */
+
+/* 
+ol {
+    counter-reset: item;
+}
+
+ol li {
+    display: block;
+    counter-increment: item;
+}
+
+ol li::before {
+    content: counters(item, ".") " ";
+}
+
+ol ol {
+    counter-reset: subitem;
+}
+
+ol ol li {
+    display: block;
+    counter-increment: subitem;
+}
+ol ol li::before {
+    content: counters(item, ".") "." counters(subitem, ".") " ";
+} */

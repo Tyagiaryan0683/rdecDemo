@@ -1,0 +1,114 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 offset-lg-4 col-lg-4 mt-4 maincard">
+            <div class="mainform progressimage pt-4">
+                <div class="text-center">
+                    <img src='https://d1-slp-cp.supremelifeplatform.com/assets/img/login/SUPREME%20GAMING.svg' alt="error">
+                </div>
+                <p class="formheading mt-4 text-light text-center">Sign In</p>
+                <form class="myform p-3 mx-4" [formGroup]="loginForm"  >
+
+                    <div class="row">
+                        <div class="col-lg-5 col-md-12 form-floating mt-2">
+                            <div class="label1">
+                                <label class="form-label">Country Code <span class="asterisk text-danger">*</span></label>
+                                <select class="form-select" formControlName="countrycode" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="91">+91 (IN)</option>
+                                    <option value="1">+1 (JM)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-md-12 form-floating mt-2">
+                            <div class="label1">
+                                <label class="form-label">Mobile Number <span class="asterisk text-danger">*</span></label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="mobilenumber"
+                                    placeholder="XXX-XXX-YYYY"
+                                    formControlName="mobileNo"
+                                    pattern="[0-9]*"
+                                    maxlength="10" 
+                                    inputmode="numeric"
+                                    (keypress)="onlyAllowNumbers($event)"
+                                    required />
+                            </div>
+                            <div *ngIf="loginForm.controls['mobileNo'].invalid && (loginForm.controls['mobileNo'].touched || loginForm.controls['mobileNo'].dirty)">
+                                <p class="emptyAlert text-danger mb-0" *ngIf="loginForm.controls['mobileNo'].errors?.['required']">
+                                    <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to continue
+                                </p>
+                                <p class="emptyAlert text-danger mb-0" *ngIf="loginForm.controls['mobileNo'].errors?.['pattern']">
+                                    <span class="fa fa-info-circle error-info-icon mr-1"></span> Please enter a valid mobile number
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 form-floating mt-4">
+                            <div class="label1">
+                                <label class="form-label">Account PIN <span class="asterisk text-danger">*</span></label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="accountpin"
+                                    formControlName="accountpin"
+                                    pattern="[0-9]*"
+                                    maxlength="10" 
+                                    #pinInput
+                                    [type]="isPasswordVisible ? 'text' : 'password'" 
+                                    (keypress)="onlyNumbers($event)"
+                                    required />
+                            </div>
+                            <div *ngIf="loginForm.controls['accountpin'].invalid && (loginForm.controls['accountpin'].touched || loginForm.controls['accountpin'].dirty)">
+                                <p class="emptyAlert text-danger mb-0" *ngIf="loginForm.controls['accountpin'].errors?.['required']">
+                                    <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to continue
+                                </p>
+                                <p class="emptyAlert text-danger mb-0" *ngIf="loginForm.controls['accountpin'].errors?.['pattern']">
+                                    <span class="fa fa-info-circle error-info-icon mr-1"></span> Please enter a valid PIN
+                                </p>
+                            </div>
+                            <div class="eyeimg">
+                                <img *ngIf="!isPasswordVisible" src="https://d1-slp-cp.supremelifeplatform.com/assets/img/common/eye.png" alt="eye icon"
+                                class="eye-icon open-eye" (click)="togglePasswordVisibility(pinInput)" />
+                                <img *ngIf="isPasswordVisible" src="https://d1-slp-cp.supremelifeplatform.com/assets/img/common/closedEye.png" alt="closed eye icon"
+                                class="eye-icon closed-eye" (click)="togglePasswordVisibility(pinInput)" />
+
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="mt-3">
+                        <a class=" btn text-success text-start " (click)="moveToChangePIN()" >Forgot PIN?</a>
+                    </div>
+
+
+
+
+                    <button type="submit" class="submitbtn" >
+                        <img
+                        (click)="onSubmit()"
+                            [src]="loginForm.valid 
+                                   ? 'https://d1-slp-cp.supremelifeplatform.com/assets/img/login/login-success.svg'
+                                   : 'https://d1-slp-cp.supremelifeplatform.com/assets/img/login/Login.svg'"
+                            alt="error"
+                            class="tickimg"
+                        />
+
+                      
+                    </button>
+                    
+                </form>
+
+                <div>
+                    <p class="text-light isusertext text-center mt-5 mb-1">New To Supreme Ventures Gaming?</p>
+                    <div class="text-center">
+                        <button class="btn btn col-10 endbtn mb-4" >Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

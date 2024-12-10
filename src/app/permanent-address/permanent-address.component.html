@@ -1,0 +1,480 @@
+<div class="container ">
+    <div class="row">
+        <div class="formheader">
+            <p>Registration</p>
+        </div>
+        <div class=" progressimage  text-center">
+            <img src='https://d1-slp-cp.supremelifeplatform.com/assets/img/signup/signup-3.png' alt="error ">
+        </div>
+        <div class=" mt-4">
+            <form class=" myform p-4 " [formGroup]="addressForm" >
+                <div class="col-lg-12 col-md-12  ">
+                    <div class=" mb-2 text-center">
+                        <p class="formheading">Permanent Address and Identification</p>
+                    </div>
+                </div>
+
+                   
+
+
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label ">Street Address <span
+                                    class="asterisk text-danger">*</span></label>
+                            <input type="text" class="form-control  " name="streetaddress"
+                                formControlName="streetaddress" id="streetaddress" />
+                        </div>
+                        <p class="streetwarning text-end mb-0"> * Residential only, No PO Box</p> <div
+                            *ngIf="addressForm.controls['streetaddress'].invalid && (addressForm.controls['streetaddress'].touched || addressForm.controls['streetaddress'].dirty)">
+                            <p class="emptyAlert text-danger mt-0"
+                                *ngIf="addressForm.controls['streetaddress'].errors?.['required']"><span
+                                    class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this to
+                                Continue</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label ">Appartment/Suits</label>
+                            <input type="text" class="form-control  " name="appartment" formControlName="appartment"
+                                id="appartment" />
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 form-floating mt-4">
+                        <label class="form-label cob-lable">Parish <span class="asterisk text-danger">*</span></label>
+                        <div class="label1">
+                            <ng-select class="custom" 
+                             formControlName="parish"
+                             (change)="onParishChange($event)"
+                            >
+
+                                <ng-option *ngFor="let parish of parishList"  [value]="parish">
+                                    {{ parish }}</ng-option>
+                            </ng-select>
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="addressForm.controls['parish'].invalid && (addressForm.controls['parish'].touched || addressForm.controls['parish'].dirty)">
+                            <p class="emptyAlert mb-0"
+                                *ngIf="addressForm.controls['parish'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to continue.
+                            </p>
+                        </div>
+                    </div>
+
+                  
+                    <div class="col-lg-12 col-md-12 form-floating mt-4">
+                        <label class="form-label cob-lable">Town <span
+                                class="asterisk text-danger">*</span></label>
+                        <div class="label1  ">
+                            <ng-select class="custom"  formControlName="town"
+                                bindLabel="name" placeholder="Select" [searchable]="true" appendTo="body"
+                                [items]="townsList" 
+                                (change)="onTownChange($event)"
+                                >
+                                <ng-option *ngFor="let item of townsList" [value]="item">{{ item.name }}</ng-option>
+                            </ng-select>
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="addressForm.controls['town'].invalid && (addressForm.controls['town'].touched || addressForm.controls['town'].dirty)">
+                            <p class="emptyAlert mb-0"
+                                *ngIf="addressForm.controls['town'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to continue.
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-lg-12 col-md-12 form-floating mt-4">
+                        <label class="form-label cob-lable">District <span
+                                class="asterisk text-danger">*</span></label>
+                        <div class="label1  ">
+                            <ng-select class="custom  "  formControlName="district"
+                                bindLabel="name" placeholder="Select" [searchable]="true" appendTo="body"
+                                [items]="districtsList"
+                                >
+                                <ng-option *ngFor="let item of districtsList" [value]="item">{{ item }}</ng-option>
+
+                            </ng-select>
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="addressForm.controls['district'].invalid && (addressForm.controls['district'].touched || addressForm.controls['district'].dirty)">
+                            <p class="emptyAlert mb-0"
+                                *ngIf="addressForm.controls['district'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to continue.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label ">Email Address <span class="asterisk text-danger">*</span></label>
+                            <input type="text" class="form-control  " name="email" formControlName="emailaddress"
+                                id="email" />
+                        </div>
+                        <div
+                            *ngIf="addressForm.controls['emailaddress'].invalid && (addressForm.controls['emailaddress'].touched || addressForm.controls['emailaddress'].dirty)">
+                            <p class="emptyAlert text-danger mt-0 mb-0"
+                                *ngIf="addressForm.controls['emailaddress'].errors?.['required']"><span
+                                    class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this to Continue
+                            </p>
+                            <p class="emptyAlert text-danger mt-0 mb-0"
+                                *ngIf="addressForm.controls['emailaddress'].errors?.['email']"><span
+                                    class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this to Continue
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label">TRN <span class="asterisk text-danger">*</span></label>
+                            <input type="text" class="form-control" name="trn" formControlName="trn" pattern="[0-9]*"
+                                maxlength="9" inputmode="numeric" (keypress)="onlyAllowNumbers($event)" required />
+                        </div>
+                        <div
+                            *ngIf="addressForm.controls['trn'].invalid && (addressForm.controls['trn'].touched || addressForm.controls['trn'].dirty)">
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="addressForm.controls['trn'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue
+                            </p>
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="addressForm.controls['trn'].errors?.['pattern']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please enter a valid mobile
+                                number
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12  form-floating  mt-4">
+                        <div class="label1  ">
+                            <label class="form-label ">ID Type<span class="asterisk  text-danger">*</span></label>
+                            <select class="form-select" formControlName="idtype">
+                                <option disabled value="">Select</option>
+                                <option *ngFor="let id of lookupData.idType" [value]="id.id">{{id.name}}</option>
+                           
+                            </select>
+
+                            <div
+                                *ngIf="addressForm.controls['idtype'].invalid && (addressForm.controls['idtype'].touched || addressForm.controls['idtype'].dirty)">
+                                <p class="emptyAlert text-danger mt-0 mb-0"
+                                    *ngIf="addressForm.controls['idtype'].errors?.['required']"><span
+                                        class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this to
+                                    Continue</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label">ID Number <span class="asterisk text-danger">*</span></label>
+                            <input type="text" class="form-control" name="idnumber" formControlName="idnumber"
+                                pattern="[0-9]*" maxlength="15" inputmode="numeric"
+                                (keypress)="onlyAllowNumbers($event)" required />
+                        </div>
+                        <div
+                            *ngIf="addressForm.controls['idnumber'].invalid && (addressForm.controls['idnumber'].touched || addressForm.controls['idnumber'].dirty)">
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="addressForm.controls['idnumber'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue
+                            </p>
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="addressForm.controls['idnumber'].errors?.['pattern']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please enter a valid mobile
+                                number
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label ">ID Expiration Date <span
+                                    class="asterisk text-danger">*</span></label>
+                            <input type="date" class="form-control  " name="idexpirationdate"
+                                formControlName="idexpirationdate" id="idexpirationdate" [min]="datelimit"  />
+                        </div>
+                        <div
+                            *ngIf="addressForm.controls['idexpirationdate'].invalid && (addressForm.controls['idexpirationdate'].touched || addressForm.controls['idexpirationdate'].dirty)">
+                            <p class="emptyAlert text-danger mt-0 mb-0"
+                                *ngIf="addressForm.controls['idexpirationdate'].errors?.['required']"><span
+                                    class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this to Continue
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <p class="text-center fontselect">Please upload a copy of your Government Issued Photo
+                                ID below:</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mb-0 ">
+                        <div class="label1">
+                            <p class="text-center text-danger picwarning"> (Make sure the ID uploaded is visible and the
+                                information can be clearly read)</p>
+                        </div>
+                    </div>
+                    <div class="input-img mt-0">
+                        <div class="col upperBorder p-2 px-2">
+                            <div class="inp">
+                                <label for="file-upload-front" class="custom-file-upload">
+                                    <img [src]="frontPhotoSrc || 'https://d1-slp-cp.supremelifeplatform.com/assets/img/signup/front-upload.png'"
+                                        alt="Upload Front Image" class="upload-image ">
+                                </label>
+                                <input type="file" id="file-upload-front" accept="image/*" formControlName="frontPhoto"
+                                    (change)="onFileSelected($event, 'frontPhoto')"  style="display: none;">
+                            </div>
+                        </div>
+                        <div class="col upperBorder p-2 px-2">
+                            <div class="inp">
+                                <label for="file-upload-back" class="custom-file-upload">
+                                    <img [src]="backPhotoSrc || 'https://d1-slp-cp.supremelifeplatform.com/assets/img/signup/front-upload.png'"
+                                        alt="Upload Back Image" class="upload-image">
+                                </label>
+                                <input type="file" id="file-upload-back" accept="image/*" formControlName="backPhoto"
+                                    (change)="onFileSelected($event, 'backPhoto')" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mt-2 ">
+                        <div class="label1">
+                            <p class="text-center text-danger picwarning"> (Allowed document formats are : jpg, jpeg,
+                                png)</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mt-2 ">
+                        <a href="" class="text-danger fontselect ">Click here to view examples of proper upload or
+                            incorrect
+                            upload</a>
+                    </div>
+                    <div class="col-lg-12 col-md-12 mt-2  radiotext">
+                        <!-- <div> -->
+                            <label>
+                                <div class="row">
+                                    <div class="col-1 ">
+                                        <input class="form-check-input ms-2" type="radio"  value="false"
+                                           formControlName="pep1" 
+                                          id="pep1"
+                                          (change)="onPaymentOptionChange($event)"
+                                            />
+                                    </div>
+                                    <div class="col">
+                                        Opt for Digital top up and redemption via digital payment methods
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="mt-2">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <input class="form-check-input ms-2" type="radio"  value="true"
+                                           formControlName="pep1" 
+                                           id="pep2"
+                                           (change)="onPaymentOptionChange($event)"
+                                        />
+                                    </div>
+                                    <div class="col">
+                                        Opt for Cash top up and redemption via cash methods
+                                    </div>
+                                </div>
+                            </label>
+                        <!-- </div> -->
+                    </div>
+                    <div *ngIf="addressForm.get('pep1')?.value==='true'" >
+                        <div class="col-lg-12 col-md-12  form-floating  mt-4 mb-4">
+                            <div class="label1  ">
+                                <label class="form-label ">Select Tire Details <span
+                                        class="asterisk  text-danger">*</span></label>
+                                <select class="form-select" formControlName="tiername" name="tiername"(change)="onTierChange()">
+                                    <option disabled value="">Select Tier</option>
+                                    <!-- <ng-option *ngFor="let item of lookupData.tierType" [value]="item.id">{{ item.name }}</ng-option> -->
+
+                                    <option value="1">Tier 1 (Deposit Limit up to $1,000)</option>
+                                    <option value="4">Tier 2 (Deposit Limit up to $3,500)</option>
+                                </select>
+                                <div
+                                    *ngIf="addressForm.controls['tiername'].invalid && (addressForm.controls['tiername'].touched || addressForm.controls['tiername'].dirty)">
+                                    <p class="emptyAlert text-danger mt-0 mb-0"
+                                        *ngIf="addressForm.controls['idexpirationdate'].errors?.['required']"><span
+                                            class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this to
+                                        Continue</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 form-floating mt-2">
+                            <a href="additionalinfo" class="text-danger tireinfo">Please click here for additional
+                                information on tiers
+                            </a>
+                        </div>
+                        <div *ngIf="addressForm.get('tiername')?.value === '4'">
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <p class="fundinfo">Please provide source of funds
+                                        <span class="asterisk  text-danger">*</span>
+                                        <span>
+                                            <button class="infoimgbtn">
+                                                <img class="infoIcon"
+                                                    src="https://d1-slp-cp.supremelifeplatform.com/assets/img/transaction/info.png"
+                                                    alt=" error">
+                                            </button>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="fundimage mb-2">
+                                <div class="col upperBorder p-2 px-2">
+                                    <div class="inp">
+                                        <label for="file-upload-front-source" class="custom-file-upload">
+                                            <img [src]="sourceOfFund || 'https://d1-slp-cp.supremelifeplatform.com/assets/img/signup/front-upload.png'"
+                                                alt="Upload Front Image" class="fundFrontImage">
+                                        </label>
+                                        <input type="file" id="file-upload-front-source" accept="image/*"
+                                            formControlName="sourceofFund"
+                                            (change)="onFileSelected($event, 'sourceofFund')" style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                                <div class="label1">
+                                    <label class="form-label ">Occupation /Line of Bussiness <span
+                                            class="asterisk text-danger">*</span></label>
+                                    <input type="text" class="form-control  " name="occupation"
+                                        formControlName="occupation" id="occupation" />
+                                </div>
+                                <div
+                                    *ngIf="addressForm.controls['occupation'].invalid && (addressForm.controls['occupation'].touched || addressForm.controls['occupation'].dirty)">
+                                    <p class="emptyAlert text-danger mt-0 mb-0"
+                                        *ngIf="addressForm.controls['occupation'].errors?.['required']"><span
+                                            class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this to
+                                        Continue</p>
+                                </div>
+                            </div>
+
+
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <p class=" fundinfo">Please provide address proof
+                                        <span class="asterisk  text-danger">*</span>
+                                        <span>
+                                            <button class="infoimgbtn">
+                                                <img class="infoIcon"
+                                                    src="https://d1-slp-cp.supremelifeplatform.com/assets/img/transaction/info.png"
+                                                    alt=" error">
+                                            </button>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="fundimage">
+                                <div class="col upperBorder p-2 px-2">
+                                    <div class="inp">
+                                        <label for="file-upload-front-address" class="custom-file-upload">
+                                            <img [src]="addressProofFile || 'https://d1-slp-cp.supremelifeplatform.com/assets/img/signup/front-upload.png'"
+                                                alt="Upload Address Image" class="fundFrontImage">
+                                        </label>
+                                        <input type="file" id="file-upload-front-address" accept="image/*"
+                                            formControlName="addressproof"
+                                            (change)="onFileSelected($event, 'addressproof')" style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="  ">
+                                <div class="fundinfo mt-4">Bank Details</div>
+                                <div class="col-lg-12 col-md-12 form-floating mt-4">
+                                    <div class="label1">
+                                        <label class="form-label">Bank Name <span
+                                                class="asterisk text-danger">*</span></label>
+                                        <select class="form-select" formControlName="bankname">
+                                            <option *ngFor="let bank of lookupData.bankNameList" [value]="bank.id">{{ bank.name }}</option>
+                                       
+                                        </select>
+
+                                        <div
+                                            *ngIf="addressForm.controls['bankname'].invalid && 
+                                      (addressForm.controls['bankname'].touched || addressForm.controls['bankname'].dirty)">
+                                            <p class="emptyAlert text-danger mt-0 mb-0"
+                                                *ngIf="addressForm.controls['bankname'].errors?.['required']">
+                                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill
+                                                this to Continue
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                                    <div class="label1">
+                                        <label class="form-label ">Branch Name <span
+                                                class="asterisk text-danger">*</span></label>
+                                        <input type="text" class="form-control  " name="branchname"
+                                            formControlName="branchname" id="branchname" />
+                                    </div>
+                                    <div
+                                        *ngIf="addressForm.controls['branchname'].invalid && (addressForm.controls['branchname'].touched || addressForm.controls['branchname'].dirty)">
+                                        <p class="emptyAlert text-danger mt-0 mb-0"
+                                            *ngIf="addressForm.controls['branchname'].errors?.['required']"><span
+                                                class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this
+                                            to Continue</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                                    <div class="label1">
+                                        <label class="form-label ">Account Number <span
+                                                class="asterisk text-danger">*</span></label>
+                                        <input type="text" class="form-control  " name="accountnumber"
+                                            formControlName="accountnumber" id="accountnumber" maxlength="15"/>
+                                    </div>
+                                    <div
+                                        *ngIf="addressForm.controls['accountnumber'].invalid && (addressForm.controls['accountnumber'].touched || addressForm.controls['accountnumber'].dirty)">
+                                        <p class="emptyAlert text-danger mt-0 mb-0"
+                                            *ngIf="addressForm.controls['accountnumber'].errors?.['required']"><span
+                                                class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this
+                                            to Continue</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12  form-floating mt-4">
+                                    <div class="label1  ">
+                                        <label class="form-label ">Account Type <span
+                                                class="asterisk text-danger">*</span></label>
+                                        <select class="form-select" formControlName="accounttype">
+                                            <option disabled value="">Select</option>
+                                            <option *ngFor="let type of lookupData.accountType " [value]="type.value">{{type.name}}</option>
+                                      
+                                        </select>
+                                        <div
+                                            *ngIf="addressForm.controls['accounttype'].invalid && (addressForm.controls['accounttype'].touched || addressForm.controls['accounttype'].dirty)">
+                                            <p class="emptyAlert text-danger mt-0 mb-0"
+                                                *ngIf="addressForm.controls['accounttype'].errors?.['required']"><span
+                                                    class="fa fa-info-circle error-info-icon mr-1"></span> Please fill
+                                                this to Continue</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                <!-- </div> -->
+                <div class="text-center mt-4 btn-container">
+                    <button class="endbtn1 btn btn-secondary col " (click)="toPersonalDetailPage()">
+                        Back</button>
+                    <button type="submit" class="endbtn2 btn btn-success col "(click)="onSubmit()"> Save and Continue </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

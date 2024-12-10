@@ -1,0 +1,199 @@
+.formheader {
+    font-family: 'Montserrat', monospace;
+    font-size: 20px;
+    text-align: center;
+    color: #269c2f;
+    margin-top: 20px;
+}
+input{
+    color: #656565;
+}
+input:focus{
+    border: 1px solid #269c2f !important;
+    box-shadow: 0 0 6px #269c2f !important;
+}
+.progressimage img {
+    width: 45%;
+}
+
+.myform {
+    border: 3px solid #269c2f;
+    border-radius: 6px;
+    background-color: white;
+    margin-bottom: 20%;
+}
+
+.formheading {
+    font-size: large;
+    font-family: 'Montserrat';
+    color: #269c2f;
+}
+
+.form-floating label {
+    position: absolute;
+    top: -10px;
+    background-color: white;
+    color: #269c2f;
+    margin-left: 5%;
+    font-size: smaller;
+    font-family: 'Montserrat';
+}
+
+.form-control.ng-touched.ng-invalid,
+.gender.ng-touched.ng-invalid {
+    border-color: red;
+}
+/* input[type="radio"] {
+    transform: scale(2) !important; 
+    accent-color: #269c2f;
+    background-color: red !important;
+  } */
+
+.form-control.ng-touched.ng-valid,
+.gender.ng-touched.ng-valid {
+    border-color: #d2d0d0;
+}
+.form-control.ng-touched.ng-valid:focus,
+.gender.ng-touched.ng-valid:focus {
+    border: 1px solid #269c2f !important;
+    box-shadow: 0 0 6px #269c2f !important;
+}
+
+::ng-deep .ng-select.ng-touched.ng-invalid .ng-select-container,
+::ng-deep .ng-select.ng-dirty.ng-invalid .ng-select-container {
+    border: 1px solid red !important;
+}
+
+::ng-deep .ng-select .ng-select-container:focus-within {
+    border: 1px solid #269c2f !important;
+    box-shadow: 0 0 6px #269c2f !important;
+}
+
+.ng-select.custom ::ng-deep .ng-select-container {
+    min-height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+::ng-deep .ng-dropdown-panel {
+    position: relative !important;
+    transform: translateY(100%) !important;
+    top: 100% !important;
+    color: red !important;
+}
+::ng-deep .ng-dropdown-panel .ng-option {
+    color: #269c2f !important;
+    margin-left: 10%;
+    background-color: white;
+}
+::ng-deep .custom .ng-value {
+    color: #656565 !important; 
+  }
+
+.ng-select .ng-select-container .ng-value-container .ng-input>input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    cursor: default;
+}
+
+
+.cob {
+    padding: 0;
+    height: 20px;
+    left: 10px;
+}
+
+.form-select,
+.form-control {
+    font-size: 15px;
+    font-family: 'Montserrat';
+    color: grey;
+    height: 3rem;
+}
+
+.profilewarning,
+.emptyAlert {
+    font-size: small;
+}
+
+.btn {
+    height: 2.8rem;
+    font-family: 'Montserrat';
+}
+
+.endbtn2 {
+    background-color: #269c2f;
+    width: 68%;
+    margin-left: 2%;
+}
+
+.endbtn1 {
+    background-color: #656565;
+    width: 30%;
+}
+
+.profileimage {
+    width: 100px;
+}
+
+.profilebtn {
+    border: none;
+    background-color: transparent;
+}
+
+.profiletag {
+    color: #269c2f;
+    font-family: 'Montserrat';
+}
+
+@media (max-width: 390px) {
+    .firstimage {
+        width: 100% !important;
+    }
+    .myform{
+        width: 100% !important;
+        margin-left: 0;
+    }
+    .endbtn2,
+    .endbtn1 {
+     font-size: 13px;
+    }
+   
+}
+@media (max-width: 600px) {
+    .firstimage {
+        width: 100% !important;
+    }
+  
+}
+
+@media (max-width: 800px) and (min-width: 700px) {
+    .firstimage {
+        width: 80% !important;
+    }
+    .myform{
+        width: 80% !important;
+        margin-left: 10%;
+        padding: 5% !important;
+        
+    }
+  
+}
+
+@media (min-width: 800px) {
+    .firstimage {
+        width: 50% !important;
+    }
+    .myform{
+        width: 120% !important;
+        margin-left: -10% ;
+        padding: 5% !important;
+        
+    }
+  
+}

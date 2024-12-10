@@ -1,0 +1,231 @@
+    .formheader {
+        font-size: x-large;
+        font-weight: 200;
+        font-family: Montserrat;
+        text-align: center;
+        color: #269c2f;
+        margin-top: 2rem;
+    }
+
+    .progressimage img {
+        width: 40%;
+    }
+
+    .formheading{
+        font-size: 18px;
+        color: #269c2f;
+    }
+    .side-border {
+        border-right: 1px solid rgb(255, 166, 0);
+    }
+
+    .bordered-section hr {
+        margin: 5px 0;
+        border-top: 1px solid #28a745;
+    }
+
+    .myform {
+        padding: 1%;
+        background-color: white;
+        border: 2px solid #269c2f;
+        border-radius: 10px;
+    }
+
+    .d-flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .data-label {
+        flex: 0 0 150px;
+        margin-right: 10px;
+        color: #656565;
+        font-size: smaller;
+
+    }
+
+    .data-value {
+        flex: 1;
+        font-size: smaller;
+        color: #269c2f;
+    }
+
+    .horizontalLine {
+        border: none;
+        border-top: 2px solid #2b2b2b !important;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .image-item {
+        flex: 1;
+        margin: 0 10px;
+        text-align: center;
+    }
+
+    .image-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .btn {
+        width: 20%;
+        height: 40px;
+        font-size: small;
+        border-radius: 4px;
+    }
+    .submitbtn{
+        background-color: #269c2f;
+    }
+    .backbtn{
+        background-color:#656565;
+
+    }
+    .additionaltxt{
+        font-size: small;
+        text-align: start;
+        color: red;
+    }
+    .editIcon{
+        width:20px; 
+    }
+    .edittext{
+        color: #269c2f;
+    }
+
+   .editbutton{
+    background-color: transparent !important;
+    border: none;
+   }
+
+
+    @media (max-width:600px) {
+     
+
+        .progressimage img {
+            width: 100%;
+        }
+        .side-border {
+            border-right: none;
+        }
+        
+        .btn {
+            width: 100%;
+            height: 40px;
+            font-size: small;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+      
+    }
+
+
+    @media (max-width:390) {
+        .myform{
+            padding: 0;
+        }
+        .formheading{
+            font-size: 10px !important;
+        }
+        .side-border {
+            border-right:none;
+        }
+        
+    }
+
+    @media (min-width:750px) and (max-width:1000px) {
+        .backbtn{
+            width: 50%;
+        }
+        .submitbtn{
+            width: 50%;
+        }
+        .side-border {
+            border-right:none;
+        }
+    }
+
+
+
+
+    /* @media (max-width: 990px) {
+        .progressimage img {
+            width: 80%;
+        }
+    
+        .side-border {
+            border-right: none;
+        }
+    
+        .btn {
+            height: 40px;
+            font-size: small;
+            border-radius: 4px;
+        }
+    
+        .myform {
+            padding: 2%;
+        }
+    
+        .row {
+            flex-direction: column;
+        }
+    
+        .col-md-4 {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    
+      
+    
+        .image-item {
+            margin-top: 20px;
+            flex: 1;
+           
+            text-align: center;
+            border: 2px dashed #28a745; 
+            border-radius: 5px;
+            padding: 10px;
+        }
+        
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            display: block; 
+        }
+
+
+
+        .editIcon {
+            width: 16px;
+        }
+    
+        .btnrow .col {
+            width: 100%;
+            text-align: center;
+        }
+
+        .data-label {
+            flex: 0 0 200px; 
+            margin-right: 20px; 
+            color: #656565;
+            font-size: smaller;
+            text-align: start;
+        }
+        
+        .data-value {
+            flex: 1; 
+            font-size: smaller;
+            color: #269c2f;
+            text-align: start;
+        }
+        
+    } */
+    
+
+     
+
+   

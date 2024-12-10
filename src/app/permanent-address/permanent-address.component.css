@@ -1,0 +1,356 @@
+.formheader {
+    font-size: large;
+    font-family: monospace;
+    text-align: center;
+    color: #279C30;
+    margin-top: 2rem;
+    font-family: Montserrat;
+}
+
+.progressimage img {
+    width: 45%;
+}
+
+.myform {
+    border: 3px solid #269c2f;
+    border-radius: 1%;
+    height: 80vh;
+    width: 30%;
+    overflow-y: auto;
+    background-color: white;
+    margin-bottom: 40px;
+    /* margin-left: 32%; */
+}
+input[type="radio"] {
+    transform: scale(1.5) !important; 
+    accent-color: #269c2f;
+    background-color: rgb(246, 243, 243) !important;
+    border: 1px solid grey;
+    position: relative;
+  }
+
+  input[type="radio"]:checked::after {
+    position: absolute;
+    content: '';
+    top: 2px;
+    left: 2px;
+    width: 8px; 
+    height: 8px;
+    background-color: #269C2f; 
+    border-radius: 50%; 
+  }
+  input[type="radio"]:focus {
+    box-shadow: none;
+    border: 1px solid grey;
+
+    
+  }
+
+.formheading {
+    font-size: 1rem;
+    color: #269c2f;
+}
+
+.streetwarning {
+    font-size: 12px;
+}
+
+.upperBorder {
+    border: #269c2f dashed;
+}
+input{
+    border-color: rgb(202, 202, 202);
+    color: #656565;
+}
+input:focus{
+    border: 1px solid #269c2f !important;
+    box-shadow: 0 0 6px #269c2f !important;
+}
+
+.form-check-input:checked {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.form-check-label {
+    font-size: small;
+    font-family: Montserrat;
+
+}
+
+.form-floating label {
+    position: absolute;
+    background-color: white;
+    color: #269c2f;
+    margin-left: 3%;
+    font-size: small;
+    font-family: Montserrat;
+    top: -10px;
+}
+
+.form-control.ng-touched.ng-invalid,
+.form-select.ng-touched.ng-invalid {
+    border-color: red;
+}
+
+.form-control.ng-touched:focus,
+.form-select.ng-touched:focus {
+    border: 1px solid #269c2f !important;
+    box-shadow: 0 0 6px #269c2f !important;
+}
+
+::ng-deep .ng-select.ng-touched.ng-invalid .ng-select-container,
+::ng-deep .ng-select.ng-dirty.ng-invalid .ng-select-container {
+    border: 1px solid red !important;
+}
+
+::ng-deep .ng-select .ng-select-container:focus-within {
+    border: 1px solid #269c2f !important;
+    box-shadow: 0 0 6px #269c2f !important;
+}
+
+::ng-deep .ng-select.custom .ng-select-container {
+    height: 45px;
+    font-size: medium;
+    padding: 0;
+}
+
+::ng-deep .ng-select.custom .ng-select-container:focus-within {
+    border: 1px solid #025c0a;
+    box-shadow: 0 0 5px rgba(0, 245, 20, 0.5);
+}
+::ng-deep .ng-dropdown-panel .ng-option {
+    color: #269c2f !important;
+   margin-left: 10%;
+   background-color: white;
+}
+::ng-deep .custom .ng-value {
+    color: #656565 !important; 
+  }
+  .form-control.ng-touched.ng-valid:focus,
+.gender.ng-touched.ng-valid:focus {
+    border: 1px solid #269c2f !important;
+    box-shadow: 0 0 6px #269c2f !important;
+}
+
+.form-select,
+.form-control {
+    font-size: medium;
+    color: rgb(91, 90, 90);
+    height: 45px;
+}
+
+.country-code {
+    font-size: smaller;
+}
+
+.countryAlert {
+    font-size: x-small;
+}
+
+.addresNotation {
+    font-size: smaller;
+}
+
+.picwarning {
+    font-size: small;
+}
+
+.form-group.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+.form-group.radio-group {
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group.radio-group label {
+    font-weight: normal;
+}
+
+.tireinfo {
+    font-size: small;
+}
+
+.infoimgbtn {
+    width: 20px;
+    background: none;
+    border: none;
+
+}
+
+.infoIcon {
+    height: 20px;
+
+}
+
+.img-border {
+    width: 60%;
+    border: 2px #269c2f dashed;
+}
+
+.btn {
+    font-family: Montserrat;
+    border-radius: 5px;
+
+}
+
+.emptyAlert {
+    font-size: small;
+    color: red;
+    margin-top: 5px;
+    display: block;
+}
+
+.endbtn1 {
+    background-color: #656565;
+    width: 30%;
+}
+
+.endbtn2 {
+    background-color: #269c2f;
+    width: 68%;
+    margin-left: 2%;
+}
+
+.input-img {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.upload-image {
+    width: 100%;
+    object-fit: contain;
+    height: 100px;
+    object-position: center;
+}
+
+.fundimage {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.upperBorder {
+    border: 1px solid #269c2f dashed;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.fundFrontImage {
+    /* width: 100%; 
+    height: auto; 
+    padding: 5px; 
+    box-sizing: border-box;
+    object-fit: contain;  */
+    width: 100%;
+    object-fit: contain;
+    height: 100px;
+    object-position: center;
+}
+
+.fontselect {
+    font-family: Montserrat;
+    font-size: small;
+    font-weight: 500;
+    color: #269c2f;
+
+}
+
+.radiotext {
+    font-size: 14px;
+    color: #656565;
+}
+
+.fundinfo {
+    color: #269c2f;
+}
+
+.cob-lable {
+    padding: 0;
+    height: 20px;
+}
+
+
+
+@media (max-width: 800px) and (min-width: 700px) {
+    .formheading {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 100;
+    }
+    .myform{
+       width: 65% !important;
+       margin-left: 15% !important;
+       height: 80vh;
+    }
+  
+}
+
+@media (min-width:800px) {
+
+ 
+
+    .formheading {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+     .myform{
+        width: 35% !important;
+        margin-left: 33%;
+     }
+
+
+}
+
+@media (max-width:390px) {
+
+    .progressimage img {
+        width: 100% !important;
+    }
+
+    .btn {
+        font-size: 12px;
+        height: 45px;
+    }
+
+    .formheading {
+        font-size: 17px;
+    }
+    .myform{
+        width: 100%;
+        margin-left: 0;
+    }
+
+
+}
+@media (max-width:770px) {
+
+    .progressimage img {
+        width: 100% !important;
+    }
+    .myform{
+        width: 100%;
+        margin-left: 10;
+    }
+}
+/* @media (min-width:1250px) {
+
+    .progressimage img {
+        width: 50% !important;
+    }
+    .myform{
+        width: 40%;
+        height: 75vh;
+        margin-left: 30%;
+    }
+    .form-floating label{
+        font-size: 15px;
+    }
+} */

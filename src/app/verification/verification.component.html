@@ -1,0 +1,81 @@
+
+<div class="container">
+    <div class="row">
+      <div class="formheader">
+        <p class="firstheading">Registration</p>
+      </div>
+      <div class="progressimage text-center">
+        <img src="https://d1-slp-cp.supremelifeplatform.com/assets/img/signup/signup-1.png" alt="error">
+      </div>
+      
+      <!-- Form Body -->
+      <div class="col-md-12 offset-lg-4 col-lg-4 mt-4">
+        <form class="myform p-4" [formGroup]="verificationform" >
+          <div class="text-center mb-4">
+            <p class="formheading mb-1">Registration</p>
+          </div>
+          
+          <!-- Verification Code Field -->
+          <div class="col-lg-12 col-md-12 form-floating">
+            <div class="label1">
+              <label class="form-label">Verification Code <span class="asterisk text-danger">*</span></label>
+              <input type="text" class="form-control" name="verificationcode" formControlName="verificationcode">
+              <div *ngIf="verificationform.controls['verificationcode'].invalid && (verificationform.controls['verificationcode'].touched || verificationform.controls['verificationcode'].dirty)">
+                <p class="emptyAlert text-danger mb-0" *ngIf="verificationform.controls['verificationcode'].errors?.['required']"> <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to continue</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Referral Code Field with Clear Button -->
+        <div class="row">
+
+            <div class="col-8  form-floating mt-3">
+              <div class="label1">
+                <label class="form-label">Referral Code <span class="asterisk text-danger">*</span></label>
+                <input type="text" class="form-control referralcode" name="referralcode" placeholder="Optional" formControlName="referralcode">
+              </div>
+            </div>
+
+            <div class="col-4 form-floating mt-3">
+              <button class="clearbtn btn text-light">Clear</button>
+            </div>
+
+        </div>          
+          <div class="text-center text-secondary">
+            <p class="textbeforeverifybutton mt-3">Verification code successfully sent.</p>
+          </div>
+          
+          <!-- (Before 60 seconds) -->
+          <div *ngIf="!showResendLayout">
+            <div class="text-center">
+              <button class="endbtn2 col-12  btn me-1"(click)="onSubmit()" >Verify Code</button>
+            </div>
+            <div class="text-center text-secondary mt-2">
+              <p class="countdowntext">You can request verification code again in {{ countdown }} seconds.</p>
+            </div>            
+            <div class="text-center mt-2">
+              <button class="endbtn3 col-12 btn" (click)="toRegistration()" >Cancel</button>
+            </div>
+          </div>
+          
+          <!-- (After 60 seconds) -->
+          <div *ngIf="showResendLayout">
+            <div class="row mt-0 ">
+              <div class="col-6 ">
+                <button class="endbtn1 col-12 btn" (click)="resetCountdown()" (click)="resendOTP()">Resend Code</button>
+              </div>
+              <div class="col-6 ">
+                <button class="endbtn2 col-12 btn" (click)="onSubmit()">Verify Code</button>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-lg-12">
+                <button class="endbtn3 col-12 btn" (click)="toRegistration()" >Cancel</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

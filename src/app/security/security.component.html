@@ -1,0 +1,262 @@
+<div class="container ">
+    <div class="row">
+        <div class="formheader">
+            <p>Registration</p>
+        </div>
+        <div class=" progressimage text-center ">
+            <img src='https://d1-slp-cp.supremelifeplatform.com/assets/img/signup/signup-3.png' alt="error ">
+        </div>
+        <div class="mt-4  ">
+            <form class=" myform p-3" [formGroup]="securityForm" >
+                <div class="text-center mb-1 mt-2">
+                    <p class="formheading ">Security Details</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12  form-floating  mt-4">
+                        <div class="label1  ">
+                            <label class="form-label ">Question 1<span class="asterisk  text-danger">*</span></label>
+                            <select class="form-select" formControlName="question1">
+                                <option disabled value="">Select</option>
+                                <option *ngFor="let question of questionsList" [value]="question.id">{{question.name}}</option>
+                              
+                            </select>
+                            <div
+                            *ngIf="securityForm.controls['question1'].invalid && (securityForm.controls['question1'].touched || securityForm.controls['question1'].dirty)">
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="securityForm.controls['question1'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to continue
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label ">Answer 1 <span class="asterisk text-danger">*</span></label>
+                            <input type="text" class="form-control  " name="answer1" formControlName="answer1"
+                                maxlength="50"  />
+                        </div>
+                        <div
+                            *ngIf="securityForm.controls['answer1'].invalid && (securityForm.controls['answer1'].touched || securityForm.controls['answer1'].dirty)">
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="securityForm.controls['answer1'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to continue
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12  form-floating  mt-4">
+                        <div class="label1  ">
+                            <label class="form-label ">Question 2<span class="asterisk  text-danger">*</span></label>
+                            <select class="form-select" formControlName="question2">
+                                <option disabled value="">Select</option>
+                                <option *ngFor="let question of questionsList" [value]="question.id">{{question.name}}</option>
+
+                            </select>
+                            <div
+                            *ngIf="securityForm.controls['question2'].invalid && (securityForm.controls['question2'].touched || securityForm.controls['question2'].dirty)">
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="securityForm.controls['question2'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to continue
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label ">Answer 2 <span class="asterisk text-danger">*</span></label>
+                            <input type="text" class="form-control  " name="answer2" formControlName="answer2"
+                                maxlength="50"  />
+                        </div>
+                        <div
+                            *ngIf="securityForm.controls['answer2'].invalid && (securityForm.controls['answer2'].touched || securityForm.controls['answer2'].dirty)">
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="securityForm.controls['answer2'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 form-floating mt-4">
+                        <div class="label1">
+                            <div class="input-container">
+                                <label class="form-label">Account PIN <span
+                                        class="asterisk text-danger">*</span></label>
+                                <input type="text" class="form-control" name="accountpin" formControlName="accountpin"
+                                    pattern="^[0-9]*$" maxlength="10" minlength="5"
+                                    [type]="isAccountPinVisible ? 'text' : 'password'" (keypress)="onlyNumbers($event)"
+                                    required />
+                                <div class="eyeimg" (click)="toggleAccountPinVisibility()">
+                                    <img [src]="isAccountPinVisible ? 'https://d1-slp-cp.supremelifeplatform.com/assets/img/common/closedEye.png' :'https://d1-slp-cp.supremelifeplatform.com/assets/img/common/eye.png' "
+                                        alt="error" class="eye-icon">
+                                </div>
+                            </div>
+                            <div class="text-end pinsize">* Use 5-10 digits only
+                            </div>
+                        </div>
+                        <div
+                            *ngIf="securityForm.controls['accountpin'].invalid && (securityForm.controls['accountpin'].touched || securityForm.controls['accountpin'].dirty)">
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="securityForm.controls['accountpin'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue
+                            </p>
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="securityForm.controls['accountpin'].errors?.['maxlength']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue
+                            </p>
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="securityForm.controls['accountpin'].errors?.['minlength']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 form-floating mt-4">
+                        <div class="label1">
+                            <div class="input-container">
+                                <label class="form-label">Confirm PIN <span
+                                        class="asterisk text-danger">*</span></label>
+                                <input type="text" class="form-control" name="confirmpin" formControlName="confirmpin"
+                                    pattern="^[0-9]*$" maxlength="10" minlength="5"
+                                    [type]="isConfirmPinVisible ? 'text' : 'password'" (keypress)="onlyNumbers($event)"
+                                    required />
+                                <div class="eyeimg" (click)="toggleConfirmPinVisibility()">
+                                    <img [src]="isConfirmPinVisible ? 'https://d1-slp-cp.supremelifeplatform.com/assets/img/common/closedEye.png' :'https://d1-slp-cp.supremelifeplatform.com/assets/img/common/eye.png' "
+                                        alt="error" class="eye-icon">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div
+                            *ngIf="securityForm.controls['confirmpin'].invalid && (securityForm.controls['confirmpin'].touched || securityForm.controls['confirmpin'].dirty)">
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="securityForm.controls['confirmpin'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue
+                            </p>
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="securityForm.controls['confirmpin'].errors?.['maxlength']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue
+                            </p>
+                            <p class="emptyAlert text-danger mb-0"
+                                *ngIf="securityForm.controls['confirmpin'].errors?.['minlength']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue
+                            </p>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!--  -->
+                </div>
+
+                <div>
+                    <p class="text-center text-success mt-4">Miscellaneous</p>
+                </div>
+
+
+                <div class="col-lg-12 col-md-12 mt-2 text-success">
+                    <div>
+                        <label class="mscquestion">Are you a Politically Exposed Person (PEP)? <span
+                                class="asterisk text-danger">*</span></label>
+                    </div>
+                    <div>
+                        <input class="form-check-input yescheckbox"
+                         type="radio" 
+                         [value]="'Y'"
+                         formControlName="areYouPEP"
+                          name="areYouPEP">
+                        <label class="form-check-label yescheckbox" for="pep1-yes">Yes</label>
+                        <input class="form-check-input nocheckbox" 
+                        type="radio"
+                        [value]="'N'"
+                        formControlName="areYouPEP"
+                        name="areYouPEP" >
+                        <label class="form-check-label nocheckboxlabel" for="pep1-no">No</label>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 mt-4 text-success">
+                    <div>
+                        <label class="mscquestion">Are you the family member of a Politically Exposed Person (PEP)?
+                            <span class="asterisk text-danger">*</span></label>
+                    </div>
+                    <div>
+                        <input class="form-check-input yescheckbox" 
+                        type="radio" 
+                        [value]="'Y'"
+                        formControlName="familyMemberPEP"
+                        name="familyMemberPEP">
+                        <label class="form-check-label yescheckbox" for="pep2-yes">Yes</label>
+
+                        <input class="form-check-input nocheckbox"
+                         type="radio"
+                         [value]="'N'"
+                         formControlName="familyMemberPEP"
+                          name="familyMemberPEP" >
+                        <label class="form-check-label nocheckboxlabel" for="pep2-no">No</label>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 mt-4 text-success">
+                    <div>
+                        <label class="mscquestion">Are you a close associate of a Politically Exposed Person (PEP)?
+                            <span class="asterisk text-danger">*</span></label>
+                    </div>
+                    <div>
+                        <input class="form-check-input yescheckbox" 
+                        type="radio"
+                        [value]="'Y'"
+                        formControlName="closeAssociatePEP"
+                        name="closeAssociatePEP">
+                        <label class="form-check-label yescheckbox" for="pep3-yes">Yes</label>
+
+                        <input class="form-check-input nocheckbox"
+                         type="radio"
+                         [value]="'N'"
+                         formControlName="closeAssociatePEP"
+                           name="closeAssociatePEP" >
+                        <label class="form-check-label nocheckboxlabel" for="pep3-no">No</label>
+                    </div>
+                </div>
+
+
+                <div class="pt-4 lasttext">
+                    <p>
+                        The Financial Action Task Force (FAFT) defines Politically Exposed Person (PEP) as:
+                        individuals who are or have been entrusted with prominent public functions in a foreign
+                        country. Example: Heads of State or of government, senior politicians, senior government or
+                        executive council of governments, judicial, military officials, senior executives of state
+                        owned corporation, important politically party officials, ambassadors, attaches. Business
+                        relationships with family members or close associates of PEPs involve reputational risks
+                        similar to those with PEP themselves.
+                    </p>
+                </div>
+
+                <!-- </div> -->
+
+                <div class="text-center mt-4">
+                    <button class="btn backbtn text-light col" (click)="toAddressPage()" > Back</button>
+                    <button class="savebtn btn text-light col "(click)="onSubmit()" > Save and Continue
+                    </button>
+                </div>
+
+
+            </form>
+
+
+
+
+        </div>
+    </div>
+</div>

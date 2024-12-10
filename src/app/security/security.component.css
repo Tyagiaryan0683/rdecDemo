@@ -1,0 +1,399 @@
+.container {
+    height: auto;
+}
+.formheader{
+    font-size: 22px;
+    font-family: Montserrat;
+    text-align: center;
+    color: #269C2F;
+    margin-top: 2rem;
+}
+.progressimage img{
+    width: 45%;
+    
+    }
+
+ .formheading{
+    color:#269C2F;
+    font-size: 18px;
+ }   
+
+.myform{
+    border: 3px solid #269C2F;
+    border-radius: 10px;
+    background-color: white;
+    width: 35%;
+    margin-left: 32%;
+}
+
+.form-floating label {
+    position: absolute;
+    background-color: white;
+    color: #269C2f;
+    margin-left: 5%;
+    font-size:14px;
+    /* font-family: Montserrat; */
+    top: -10px;
+}
+
+input{
+    background-color: #fff;
+}
+
+.form-control:focus,.form-select:focus {
+    border-color: #025c0a; 
+    box-shadow: 0 0 5px rgba(0, 245, 20);
+    outline: none;
+}
+
+.form-control.ng-touched.ng-invalid,
+.form-control.ng-touched 
+.gender.ng-touched.ng-invalid,
+.gender.ng-touched,
+.form-select.ng-touched.ng-invalid,
+.form-select.ng-touched{
+    border-color: red;
+}
+.form-control.ng-touched.ng-valid,
+.form-control.ng-touched ,
+.gender.ng-touched.ng-valid,
+.form-select.ng-touched.ng-valid{
+    border-color: rgb(0, 128, 30);
+}
+
+input[type="radio"] {
+    transform: scale(1.5) !important; 
+    accent-color: #269c2f;
+    background-color: rgb(246, 243, 243) !important;
+    border: 1px solid rgb(192, 191, 191);
+    position: relative;
+  }
+
+  input[type="radio"]:checked::after {
+    position: absolute;
+    content: '';
+    top: 2px;
+    left: 2px;
+    width: 10px; 
+    height: 10px;
+    background-color: #269C2f; 
+    border-radius: 50%; 
+  }
+  input[type="radio"]:focus {
+    box-shadow: none;
+    
+  }
+
+.form-select ,.form-control{
+    font-size: medium;
+    color: grey;
+    height: 3rem;
+}
+.pinsize{
+    font-size: small;
+    font-family: Montserrat;
+}
+
+.mscquestion{
+    color:#279C30;
+    font-family: Montserrat;
+
+}
+.yescheckbox{
+    margin-left: 5%;
+}
+.nocheckboxlabel{
+    margin-left: 5%;
+
+}
+.nocheckbox{
+    margin-left: 30%;
+    color: black;
+}
+.form-check-input:checked  {
+    background-color: #269C2F;
+    }
+
+.savebtn{
+    background-color: #269C2F;
+    width: 68%;
+    margin-left: 2%;
+}    
+.backbtn{
+    background-color: #656565;
+    width: 30%;
+
+}
+.lasttext{
+    color: #656565;
+    font-size: 15px;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+.input-container {
+    position: relative; 
+}
+
+.eyeimg {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eye-icon {
+    width: 24px; 
+    height: 24px; 
+    object-fit: contain; 
+}
+
+.emptyAlert{
+    font-size: small;
+    font-family: Montserrat;
+}
+
+@media (max-width:390px) {
+
+    .progressimage img{
+        width: 100%;
+        
+        }
+     
+        .myform{
+           margin-bottom: 20%;
+           width: 100%;
+           margin: 0;
+        }
+}
+
+@media (max-width:600px) {
+
+    .progressimage img{
+        width: 100%;
+        
+        }
+       
+        .myform{
+           margin-bottom: 20%;
+           width: 100%;
+           margin: 0;
+
+        }
+}
+@media (min-width:990px) {
+
+    .progressimage img{
+        width: 50%;
+        
+        }
+       
+        .myform{
+           margin-bottom: 20%;
+           width: 40%;
+           margin-left: 30%;
+        }
+}
+
+/* @media (max-width:1280px) {
+
+
+       
+        .myform{
+           margin-bottom: 20%;
+        }
+} */
+@media (max-width:800px)  and (min-width:750px) {
+
+
+       
+    .myform{
+       margin-bottom: 20%;
+       width: 70% !important;
+       margin-left: 15%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .form-floating label {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    color: #269c2f;
+    margin-left: 5%;
+    font-size: smaller;
+    font-family: MetroPolisReguler;
+}
+.form-control:focus,.form-select:focus {
+    border-color: #025c0a; 
+    box-shadow: 0 0 5px rgba(0, 245, 20);
+    outline: none;
+}
+.form-control.ng-touched.ng-invalid,
+.form-control.ng-touched {
+    border-color: red;
+}
+.form-select ,.form-control{
+    font-size: small;
+    color: grey;
+    height: 3rem;
+}
+
+.question{
+    font-size: smaller;
+}
+.countryAlert{
+    font-size: x-small;
+}
+
+.addresNotation{
+    font-size:smaller;
+}
+.yescheckbox{
+    margin-left: 5%;
+}
+.nocheckboxlabel{
+    margin-left: 5%;
+}
+.nocheckbox{
+    margin-left: 30%;
+    color: black;
+}
+.pinsize{
+    font-size: smaller;
+}
+.lasttext{
+    font-size: medium;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(80, 77, 77);
+}
+.form-check-input:checked  {
+background-color: #269c2f;
+}
+.letterspacing{
+    letter-spacing: 4cap;
+}
+
+.eyeimg{
+    position: absolute;
+    width: 15%;
+    top: 25%;
+    right: 0;
+} */
+
+
+ 

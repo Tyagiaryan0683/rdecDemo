@@ -1,0 +1,150 @@
+<div class="container ">
+    <div class="row">
+        <div class="formheader">
+            <p>Registration</p>
+        </div>
+        <div class=" progressimage text-center  ">
+            <img src='https://d1-slp-cp.supremelifeplatform.com/assets/img/signup/signup-2.png' alt="error " class="firstimage">
+        </div>
+        <div class="col-md-10 offset-lg-4 offset-md-1 col-lg-4 mt-4 ">
+            <form class=" myform p-3 " [formGroup]="personalDetailForm">
+                <div class="text-center mb-2 mt-2">
+                    <p class="formheading">Personal Details</p>
+                </div>
+
+                <div class="text-center mb-2" id="profileimg bg-danger ">
+                    <button type="button" (click)="onSelectFile()" class="profilebtn">
+                        <img [src]="profileImgSrc || 'https://d1-slp-cp.supremelifeplatform.com/assets/img/signup/profileimage.png'"
+                            alt="Profile Image" class="profileimage"  >
+                    </button>
+                    <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)"  
+                    style="display: none;" formControlName="profilepic">
+                    <div>
+                        <p class="text-center text-danger profilewarning">(Allowed document formats are : jpg, jpeg,
+                            png)</p>
+                    </div>
+                </div>
+
+                
+                
+                <div class="text-center mt-0">
+                    <p class="profiletag">Profile Picture</p>
+                </div>
+                <div class="row ">
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label ">First Name <span class="asterisk text-danger">*</span></label>
+                            <input type="text" class="form-control  " name="firstname" formControlName="firstname"
+                                id="firstname" />
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="personalDetailForm.controls['firstname'].invalid && (personalDetailForm.controls['firstname'].touched || personalDetailForm.controls['firstname'].dirty)">
+                            <p class="emptyAlert mb-0"
+                                *ngIf="personalDetailForm.controls['firstname'].errors?.['required' ]"><span
+                                    _ngcontent-udn-c13="" class="fa fa-info-circle error-info-icon mr-1"></span> please
+                                fill this field to continue.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mt-4">
+                        <div class="label1">
+                            <label class="form-label ">Middle Name </label>
+                            <input type="text" class="form-control  " name="middlename" formControlName="middlename"
+                                id="middlename" />
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label ">Last Name <span class="asterisk text-danger">*</span></label>
+                            <input type="text" class="form-control  " name="lastname" formControlName="lastname"
+                                id="lastname" />
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="personalDetailForm.controls['lastname'].invalid && (personalDetailForm.controls['lastname'].touched || personalDetailForm.controls['lastname'].dirty)">
+                            <p class="emptyAlert mb-0"
+                                *ngIf="personalDetailForm.controls['lastname'].errors?.['required']"><span
+                                    _ngcontent-udn-c13="" class="fa fa-info-circle error-info-icon mr-1"></span> please
+                                fill this field to continue.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mt-4 ">
+                        <div class="label1">
+                            <label class="form-label ">Date of Birth <span class="asterisk text-danger">*</span></label>
+                            <input type="date" class="form-control  " name="dateofbirth" formControlName="dateofbirth"
+                                id="dateofbirth" [max]="maxDate" />
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="personalDetailForm.controls['dateofbirth'].invalid && (personalDetailForm.controls['dateofbirth'].touched || personalDetailForm.controls['dateofbirth'].dirty)">
+                            <p class="emptyAlert mb-0"
+                                *ngIf="personalDetailForm.controls['dateofbirth'].errors?.['required']"><span
+                                    _ngcontent-udn-c13="" class="fa fa-info-circle error-info-icon mr-1"></span>please
+                                fill this field to continue.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12  form-floating  mt-4">
+                        <div class="label1  ">
+                            <label class="form-label ">Gender <span class="asterisk  text-danger">*</span></label>
+                            <select class="form-select gender" formControlName="gender" name="gender">
+                                <option disabled value="">Select</option>
+                                <option *ngFor="let item of lookupData.genderList" [value]="item.id">{{item.name}}</option>
+
+                            </select>
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="personalDetailForm.controls['gender'].invalid && (personalDetailForm.controls['gender'].touched || personalDetailForm.controls['gender'].dirty)">
+                            <p class="emptyAlert mb-0"
+                                *ngIf="personalDetailForm.controls['gender'].errors?.['required']"><span
+                                    _ngcontent-udn-c13="" class="fa fa-info-circle error-info-icon mr-1"></span> please
+                                fill this field to continue.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mt-4">
+                        <label class="form-label cob">Country of Birth <span
+                                class="asterisk text-danger">*</span></label>
+                        <div class="label1  ">
+                            <ng-select class="custom" 
+                                 formControlName="countryofbirth"
+                                 bindLabel="name"
+                                 placeholder="Select"
+                                 [searchable]="true"
+                                 >
+                                <ng-option *ngFor="let country of lookupData.countryList" [value]="country.id" >{{country.name}}</ng-option>
+                            </ng-select>
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="personalDetailForm.controls['countryofbirth'].invalid && (personalDetailForm.controls['countryofbirth'].touched || personalDetailForm.controls['countryofbirth'].dirty)">
+                            <p class="emptyAlert mb-0"
+                                *ngIf="personalDetailForm.controls['countryofbirth'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 form-floating mt-4">
+                        <label class="form-label cob">Nationality <span class="asterisk text-danger">*</span></label>
+                        <div class="label1  ">
+                            <ng-select  class="custom" formControlName="nationality" bindLabel="name"
+                                placeholder="Select" [searchable]="true">
+                                <ng-option *ngFor="let item of lookupData.countryList" [value]="item.id" >{{item.name}}</ng-option>
+
+                            </ng-select>
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="personalDetailForm.controls['nationality'].invalid && (personalDetailForm.controls['nationality'].touched || personalDetailForm.controls['nationality'].dirty)">
+                            <p class="emptyAlert mb-0"
+                                *ngIf="personalDetailForm.controls['nationality'].errors?.['required']">
+                                <span class="fa fa-info-circle error-info-icon mr-1"></span> Please fill this field to
+                                continue.
+                            </p>
+                        </div>
+                    </div>
+                    <div class=" mt-4 mb-2">
+                        <!-- <div class="d-flex justify-content-center"> -->
+                            <button class="endbtn1 btn btn-secondary col " (click)="moveToTerms()">Back</button>
+                            <button class="endbtn2 btn btn-success col "  (click)="onSubmit()">Save and Continue</button>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>  
+</div>
